@@ -1,0 +1,44 @@
+{%extends'base2.html'%}
+
+{%block content%}
+
+<br>
+<div class="container">
+<div class="grad">
+<table>
+  <tr>
+    <th>موضوع</th>
+    <th>تاریخ</th>
+      <th>زمان</th>
+      <th>زمان ثبت</th>
+  </tr>
+  {% for n in range(items)%}
+    <tr>
+        <td>
+                    {{subject[n].subject}}
+        </td>
+        <td>
+                   {{subject[n].date}}
+        </td>
+        <td>
+           {{subject[n].time}}
+        </td>
+        <td>
+           {{subject[n].t}}
+        </td>
+        <td>
+           <a href="/delete" type="button" class="btn btn-outline-info">done</a>
+        </td>
+    </tr>
+
+    {% endfor %}
+</table>
+
+</div>
+
+<center>
+    <br><br>
+       <a class="btn btn-outline-primary" href="/add" role="button">add work today</a>
+</center>
+    </div>
+{%endblock%}
